@@ -24,6 +24,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# large video files (host externally)
+public/*.mp4
+
 # typescript
 tsconfig.tsbuildinfo
 next-env.d.ts

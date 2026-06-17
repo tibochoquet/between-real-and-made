@@ -154,6 +154,7 @@ export function ProofOfConcept() {
               className="text-center p-6 md:p-8 rounded-2xl bg-brown/5 border border-brown/10"
               variants={scaleIn}
               whileHover={{ y: -6 }}
+              whileTap={{ y: -4 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <p className="font-playfair text-terracotta text-display-sm font-bold mb-2">

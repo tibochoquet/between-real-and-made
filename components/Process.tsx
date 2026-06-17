@@ -35,6 +35,7 @@ function BookMockup({ onOpen }: BookMockupProps) {
           }}
           animate={{ rotateY: -26, rotateX: 3 }}
           whileHover={{ rotateY: -19, rotateX: 1.5, scale: 1.015 }}
+          whileTap={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 180, damping: 22 }}
           onClick={onOpen}
           onKeyDown={(e) => {

@@ -126,6 +126,7 @@ export function Reflection() {
               style={{ minHeight: "260px" }}
               variants={scaleIn}
               whileHover={{ y: -5 }}
+              whileTap={{ y: -3 }}
               transition={{ type: "spring", stiffness: 280, damping: 22 }}
             >
               <span className="font-inter text-terracotta font-semibold text-sm">

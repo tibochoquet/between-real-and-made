@@ -388,6 +388,15 @@ export function DiscussionTool() {
                 className="relative rounded-[2.1rem] sm:rounded-[2.5rem] overflow-hidden aspect-[9/19.5]"
                 style={{ backgroundColor: "#0A0A0B" }}
               >
+                {/* Preload all scene images in background */}
+                <div className="absolute inset-0 opacity-0 pointer-events-none" aria-hidden="true">
+                  {questions.map((q, i) => (
+                    <div key={i} className="absolute inset-0">
+                      <Image src={q.img} alt="" fill sizes={cardSizes} className="object-cover" />
+                    </div>
+                  ))}
+                </div>
+
                 <AnimatePresence mode="wait" initial={false}>
                   {step === "intro" && (
                     <motion.div

@@ -164,12 +164,14 @@ export function TheExperience() {
                 className="group flex-1 min-w-0"
                 variants={scaleIn}
                 whileHover={{ y: -6 }}
+                whileTap={{ y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <motion.a
                   href={step.anchor}
                   className="relative w-32 h-32 rounded-2xl overflow-hidden block mb-6 cursor-pointer"
                   whileHover={{ rotate: 5, scale: 1.06 }}
+                  whileTap={{ rotate: 5, scale: 1.06 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
                   aria-label={`Ga naar ${step.title}`}
                 >

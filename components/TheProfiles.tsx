@@ -141,11 +141,13 @@ function ProfileCard({
   onOpen: (profile: Profile, trigger: HTMLElement) => void;
 }) {
   const [isActive, setIsActive] = useState(false);
+  const isTouchFlipping = useRef(false);
 
   return (
     <motion.div
       variants={scaleIn}
       whileHover={{ y: -6 }}
+      whileTap={{ y: -3 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div
@@ -153,10 +155,20 @@ function ProfileCard({
         style={{ perspective: "1800px" }}
         onMouseEnter={() => setIsActive(true)}
         onMouseLeave={() => setIsActive(false)}
+        onTouchStart={() => {
+          if (!isActive) isTouchFlipping.current = true;
+        }}
       >
         <motion.button
           type="button"
-          onClick={(e) => onOpen(profile, e.currentTarget)}
+          onClick={(e) => {
+            if (isTouchFlipping.current) {
+              isTouchFlipping.current = false;
+              setIsActive(true);
+              return;
+            }
+            onOpen(profile, e.currentTarget);
+          }}
           onFocus={() => setIsActive(true)}
           onBlur={() => setIsActive(false)}
           className={`absolute inset-0 w-full h-full rounded-[20px] transition-shadow duration-500 outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-4 focus-visible:ring-offset-cream cursor-pointer ${

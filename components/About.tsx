@@ -156,6 +156,7 @@ export function About() {
                   className="group flex items-center gap-2 px-4 py-2.5 rounded-full border border-cream/15 text-cream/50 hover:text-cream hover:border-cream/30 transition-all duration-300 font-inter text-sm"
                   variants={fadeIn}
                   whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   <span className="label-text text-terracotta group-hover:text-terracotta-light transition-colors duration-300">
                     {label}
