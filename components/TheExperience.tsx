@@ -147,7 +147,7 @@ export function TheExperience() {
             whileInView="visible"
             viewport={viewportConfig}
           >
-            We ontwierpen een meeslepende onderzoekservaring die deelnemers
+            Ik ontwierp een meeslepende onderzoekservaring die deelnemers
             meeneemt van passief kijken naar actief creëren, en onderzoekt
             vervolgens wat die reis doet met hoe ze over muziek denken.
           </motion.p>
