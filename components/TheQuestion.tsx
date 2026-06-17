@@ -20,7 +20,7 @@ export function TheQuestion() {
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image src="/tool/donker1.png" alt="" fill className="object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(165deg, rgba(28,15,10,0.78) 0%, rgba(46,22,15,0.78) 45%, rgba(13,7,5,0.78) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(165deg, rgba(28,15,10,0.58) 0%, rgba(46,22,15,0.58) 45%, rgba(13,7,5,0.58) 100%)" }} />
       </div>
       <SectionGlow
         layers={[

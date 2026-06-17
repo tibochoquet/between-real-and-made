@@ -57,7 +57,7 @@ export function Reflection() {
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image src="/tool/licht4.png" alt="" fill className="object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(243,228,205,0.90) 0%, rgba(231,213,187,0.90) 45%, rgba(218,197,168,0.89) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(243,228,205,0.72) 0%, rgba(231,213,187,0.72) 45%, rgba(218,197,168,0.70) 100%)" }} />
       </div>
       <SectionGlow
         layers={[
@@ -122,8 +122,8 @@ export function Reflection() {
           {insights.map((item) => (
             <motion.div
               key={item.num}
-              className="bg-brown rounded-2xl p-7 md:p-8 flex flex-col justify-between gap-10"
-              style={{ minHeight: "260px" }}
+              className="rounded-2xl p-7 md:p-8 flex flex-col justify-between gap-10"
+              style={{ minHeight: "260px", background: "linear-gradient(145deg, #4A2B1A 0%, #1C0F0A 100%)" }}
               variants={scaleIn}
               whileHover={{ y: -5 }}
               whileTap={{ y: -3 }}

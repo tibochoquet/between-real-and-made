@@ -19,6 +19,7 @@ const steps = [
       "Deelnemers bekijken een kortfilm van 2:40 minuten, volledig gegenereerd door AI, ontworpen om emotioneel echt aan te voelen.",
     image: "/tool/magnific_KjIOBq8kqp.png",
     anchor: "#film",
+    objectPosition: "center",
   },
   {
     number: "02",
@@ -27,6 +28,7 @@ const steps = [
       "Ze beantwoorden vier vragen over de film en nemen zo zelf positie in over AI in muziek.",
     image: "/tool/magnific_mCWknvBhJQ.png",
     anchor: "#tool",
+    objectPosition: "center",
   },
   {
     number: "03",
@@ -35,6 +37,7 @@ const steps = [
       "Op basis van hun antwoorden krijgen deelnemers een van de vijf onderscheidende luisteraarsprofielen.",
     image: "/tool/magnific_EqDsVinuuO.png",
     anchor: "#profiles",
+    objectPosition: "center top",
   },
   {
     number: "04",
@@ -43,6 +46,7 @@ const steps = [
       "Met hun profielkaartje in de hand gaan deelnemers met elkaar in gesprek over wat de film en de tool bij hen opriepen.",
     image: "/tool/magnific_make-a-png-3d-of-img1-mak_y6KYHYTPW9.png",
     anchor: "#proof",
+    objectPosition: "center",
   },
 ];
 
@@ -92,7 +96,7 @@ export function TheExperience() {
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image src="/tool/licht1.png" alt="" fill className="object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(165deg, rgba(243,228,205,0.90) 0%, rgba(231,213,187,0.90) 45%, rgba(218,197,168,0.89) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(165deg, rgba(243,228,205,0.72) 0%, rgba(231,213,187,0.72) 45%, rgba(218,197,168,0.70) 100%)" }} />
       </div>
       <SectionGlow
         layers={[
@@ -169,7 +173,7 @@ export function TheExperience() {
               >
                 <motion.a
                   href={step.anchor}
-                  className="relative w-32 h-32 rounded-2xl overflow-hidden block mb-6 cursor-pointer"
+                  className="relative w-full aspect-[4/3] sm:w-32 sm:h-32 sm:aspect-auto rounded-2xl overflow-hidden block mb-6 cursor-pointer"
                   whileHover={{ rotate: 5, scale: 1.06 }}
                   whileTap={{ rotate: 5, scale: 1.06 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -180,9 +184,11 @@ export function TheExperience() {
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 128px, 160px"
+                    style={{ objectPosition: step.objectPosition }}
+                    sizes="(max-width: 640px) calc(100vw - 2rem), 160px"
                     quality={90}
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brown/35 via-transparent to-transparent" />
                 </motion.a>
 
                 <p className="font-inter text-terracotta font-medium text-xs uppercase tracking-widest mb-2">

@@ -152,8 +152,11 @@ function ProfileCard({
       <div
         className="relative w-full aspect-[18/10]"
         style={{ perspective: "1800px" }}
-        onPointerEnter={() => setIsActive(true)}
-        onPointerLeave={() => setIsActive(false)}
+        onPointerEnter={(e) => { if (e.pointerType === "mouse") setIsActive(true); }}
+        onPointerLeave={(e) => { if (e.pointerType === "mouse") setIsActive(false); }}
+        onPointerDown={(e) => { if (e.pointerType !== "mouse") setIsActive(true); }}
+        onPointerUp={(e) => { if (e.pointerType !== "mouse") setIsActive(false); }}
+        onPointerCancel={() => setIsActive(false)}
       >
         <motion.button
           type="button"
