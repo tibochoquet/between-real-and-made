@@ -173,8 +173,7 @@ export function TheExperience() {
               >
                 <motion.a
                   href={step.anchor}
-                  className="relative w-full aspect-[4/3] sm:w-32 sm:h-32 sm:aspect-auto rounded-2xl overflow-hidden block mb-6 cursor-pointer"
-                  style={{ boxShadow: "0 8px 28px rgba(28,15,10,0.22), 0 2px 8px rgba(28,15,10,0.12)" }}
+                  className="relative w-full aspect-[4/3] sm:w-32 sm:h-32 sm:aspect-auto rounded-2xl block mb-6 cursor-pointer"
                   whileHover={{ rotate: 5, scale: 1.06 }}
                   whileTap={{ rotate: 5, scale: 1.06 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -184,7 +183,7 @@ export function TheExperience() {
                     src={step.image}
                     alt=""
                     fill
-                    className="object-contain"
+                    className="object-contain [filter:drop-shadow(0_10px_24px_rgba(28,15,10,0.35))]"
                     sizes="(max-width: 640px) calc(100vw - 2rem), 160px"
                     quality={90}
                   />
