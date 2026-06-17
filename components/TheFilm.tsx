@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -41,14 +41,14 @@ const stills = [
   },
 ];
 
+const FILM_YOUTUBE_ID = "NxNQTP4U_nM";
+
 export function TheFilm() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [playActive, setPlayActive] = useState(false);
   const [activeStill, setActiveStill] = useState<number | null>(null);
 
   const handlePlay = () => {
     setPlayActive(true);
-    videoRef.current?.play();
   };
 
   return (
@@ -138,74 +138,64 @@ export function TheFilm() {
               className="relative w-full rounded-2xl overflow-hidden group bg-black"
               style={{ aspectRatio: "16/9" }}
             >
-              {/* Film */}
-              <video
-                ref={videoRef}
-                src="/Between%20Real%20and%20Made.mp4"
-                poster="/tool/filmcover.jpg"
-                className="absolute inset-0 w-full h-full object-cover"
-                controls={playActive}
-                playsInline
-                preload="metadata"
-              />
-
-              {/* Play button overlay */}
-              <AnimatePresence>
-                {!playActive && (
-                  <motion.button
-                    type="button"
-                    onClick={handlePlay}
-                    className="absolute inset-0 flex flex-col items-center justify-center gap-4 cursor-pointer outline-none"
-                    aria-label="Speel de film af"
-                    initial={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {/* Darken for legibility */}
-                    <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors duration-300" />
-                    {/* Subtle film-grain lines */}
-                    <div
-                      className="absolute inset-0 opacity-[0.06]"
-                      style={{
-                        backgroundImage:
-                          "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 3px)",
-                      }}
-                      aria-hidden="true"
-                    />
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-terracotta/20 border border-terracotta/40 flex items-center justify-center group-hover:bg-terracotta/30 transition-all duration-300 group-hover:scale-110">
-                      <svg
-                        className="w-6 h-6 md:w-8 md:h-8 text-terracotta ml-1"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
+              {playActive ? (
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${FILM_YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
+                  title="Between Real and Made"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <>
+                  <Image
+                    src="/tool/filmcover.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Corner frame marks */}
+                  {["top-3 left-3", "top-3 right-3", "bottom-3 left-3", "bottom-3 right-3"].map(
+                    (pos, i) => (
+                      <div
+                        key={i}
+                        className={`absolute ${pos} w-4 h-4 border-terracotta/30 pointer-events-none`}
+                        style={{
+                          borderTop: i < 2 ? "1px solid" : "none",
+                          borderBottom: i >= 2 ? "1px solid" : "none",
+                          borderLeft: i % 2 === 0 ? "1px solid" : "none",
+                          borderRight: i % 2 !== 0 ? "1px solid" : "none",
+                        }}
                         aria-hidden="true"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <p className="relative label-text text-cream/80">
-                      Bekijk de film
-                    </p>
-                  </motion.button>
-                )}
-              </AnimatePresence>
-
-              {/* Corner frame marks — cinematic feel */}
-              {!playActive &&
-                ["top-3 left-3", "top-3 right-3", "bottom-3 left-3", "bottom-3 right-3"].map(
-                  (pos, i) => (
-                    <div
-                      key={i}
-                      className={`absolute ${pos} w-4 h-4 border-terracotta/30 pointer-events-none`}
-                      style={{
-                        borderTop: i < 2 ? "1px solid" : "none",
-                        borderBottom: i >= 2 ? "1px solid" : "none",
-                        borderLeft: i % 2 === 0 ? "1px solid" : "none",
-                        borderRight: i % 2 !== 0 ? "1px solid" : "none",
-                      }}
-                      aria-hidden="true"
-                    />
-                  )
-                )}
+                      />
+                    )
+                  )}
+                  <AnimatePresence>
+                    <motion.button
+                      type="button"
+                      onClick={handlePlay}
+                      className="absolute inset-0 flex flex-col items-center justify-center gap-4 cursor-pointer outline-none"
+                      aria-label="Speel de film af"
+                      initial={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors duration-300" />
+                      <div
+                        className="absolute inset-0 opacity-[0.06]"
+                        style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 3px)" }}
+                        aria-hidden="true"
+                      />
+                      <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-terracotta/20 border border-terracotta/40 flex items-center justify-center group-hover:bg-terracotta/30 transition-all duration-300 group-hover:scale-110">
+                        <svg className="w-6 h-6 md:w-8 md:h-8 text-terracotta ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <p className="relative label-text text-cream/80">Bekijk de film</p>
+                    </motion.button>
+                  </AnimatePresence>
+                </>
+              )}
             </div>
           </motion.div>
         </div>

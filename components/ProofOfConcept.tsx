@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   fadeIn,
@@ -79,14 +79,14 @@ const quotes = [
   },
 ];
 
+const PROOF_YOUTUBE_ID = "2t5L6nZ_XaY";
+
 export function ProofOfConcept() {
   const [activeQuote, setActiveQuote] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [playActive, setPlayActive] = useState(false);
 
   const handlePlay = () => {
     setPlayActive(true);
-    videoRef.current?.play();
   };
 
   return (
@@ -218,45 +218,43 @@ export function ProofOfConcept() {
                 style={{ aspectRatio: "16/9" }}
                 variants={scaleIn}
               >
-                <video
-                  ref={videoRef}
-                  src="/Proof%20of%20Concept.mp4"
-                  poster="/proof-cover.jpg"
-                  controls={playActive}
-                  playsInline
-                  preload="metadata"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-
-                {/* Play button overlay */}
-                <AnimatePresence>
-                  {!playActive && (
-                    <motion.button
-                      type="button"
-                      onClick={handlePlay}
-                      className="absolute inset-0 flex flex-col items-center justify-center gap-4 cursor-pointer outline-none"
-                      aria-label="Speel de bewijs-van-concept video af"
-                      initial={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors duration-300" />
-                      <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-terracotta/20 border border-terracotta/40 flex items-center justify-center group-hover:bg-terracotta/30 transition-all duration-300 group-hover:scale-110">
-                        <svg
-                          className="w-6 h-6 md:w-8 md:h-8 text-terracotta ml-1"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                      <p className="relative label-text text-cream/80">
-                        Bekijk de proefsessie
-                      </p>
-                    </motion.button>
-                  )}
-                </AnimatePresence>
+                {playActive ? (
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${PROOF_YOUTUBE_ID}?autoplay=1&rel=0&modestbranding=1`}
+                    title="Proof of Concept"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <>
+                    <Image
+                      src="/proof-cover.jpg"
+                      alt=""
+                      fill
+                      className="object-cover"
+                    />
+                    <AnimatePresence>
+                      <motion.button
+                        type="button"
+                        onClick={handlePlay}
+                        className="absolute inset-0 flex flex-col items-center justify-center gap-4 cursor-pointer outline-none"
+                        aria-label="Speel de bewijs-van-concept video af"
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="absolute inset-0 bg-black/25 group-hover:bg-black/15 transition-colors duration-300" />
+                        <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-terracotta/20 border border-terracotta/40 flex items-center justify-center group-hover:bg-terracotta/30 transition-all duration-300 group-hover:scale-110">
+                          <svg className="w-6 h-6 md:w-8 md:h-8 text-terracotta ml-1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                        <p className="relative label-text text-cream/80">Bekijk de proefsessie</p>
+                      </motion.button>
+                    </AnimatePresence>
+                  </>
+                )}
               </motion.div>
             </motion.div>
           </motion.div>
