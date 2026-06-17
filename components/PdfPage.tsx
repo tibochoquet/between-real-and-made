@@ -32,8 +32,10 @@ function renderPageBitmap(pdf: PDFDocumentProxy, pageNumber: number, width: numb
     const page = await pdf.getPage(pageNumber);
     const baseViewport = page.getViewport({ scale: 1 });
     const dpr = typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
-    // Render at 2× above screen DPR so the bitmap stays sharp at moderate browser zoom.
-    const scale = (width * dpr * 2) / baseViewport.width;
+    // On mobile, cap at 1× DPR to avoid ~25MB canvas allocations that crash the tab.
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+    const multiplier = isMobile ? 1 : 2;
+    const scale = (width * dpr * multiplier) / baseViewport.width;
     const viewport = page.getViewport({ scale });
 
     const canvas = document.createElement("canvas");

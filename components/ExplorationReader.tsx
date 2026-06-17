@@ -456,10 +456,34 @@ export function ExplorationReader({ onClose, geo }: ExplorationReaderProps) {
   // Pre-render neighbouring pages so flipping to them shows up instantly, with no fade.
   useEffect(() => {
     if (!pdf) return;
-    [position - 1, position, position + 1, position + 2, position + 3].forEach((n) => {
+    const neighbours = isDesktop
+      ? [position - 1, position, position + 1, position + 2, position + 3]
+      : [position, position + 1]; // mobile: only next page to save memory
+    neighbours.forEach((n) => {
       if (n >= 2 && n <= numPages) preloadPdfPage(pdf, n, pageWidth);
     });
-  }, [pdf, position, numPages, pageWidth]);
+  }, [pdf, position, numPages, pageWidth, isDesktop]);
+
+  // Touch swipe navigation
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    let startX = 0;
+    const onTouchStart = (e: TouchEvent) => { startX = e.touches[0].clientX; };
+    const onTouchEnd = (e: TouchEvent) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 48) {
+        if (dx < 0) goNext();
+        else goPrev();
+      }
+    };
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [goNext, goPrev]);
 
   // Desktop spread positions; mobile uses `position` directly for the single page.
   const spreadIndex = Math.floor((position - 1) / 2);
