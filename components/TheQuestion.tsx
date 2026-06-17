@@ -79,19 +79,15 @@ export function TheQuestion() {
               Motivatie
             </h3>
             <p className="font-inter text-cream/65 leading-relaxed text-base md:text-lg mb-5">
-              De opkomst van AI-muziekgeneratoren zoals Suno, Udio en Stable
-              Audio heeft een nieuwe culturele breuklijn gecreëerd. Wanneer een
-              luisteraar geen onderscheid meer kan maken tussen door mensen
-              gemaakte en door AI gegenereerde muziek, verschuift er iets
-              fundamenteels in hoe ze die waarderen, interpreteren en
-              bespreken.
+              AI-muziekgeneratoren zoals Suno, Udio en Stable Audio maken het
+              steeds moeilijker om te horen of muziek door mensen of door een
+              machine is gemaakt. Dat verandert iets in hoe mensen naar muziek
+              luisteren, wat ze erin waarderen en hoe ze erover praten.
             </p>
             <p className="font-inter text-cream/65 leading-relaxed text-base md:text-lg">
-              Dit project stelt de vraag: wat houdt die verschuiving in, wie
-              ervaart hem, en wat betekent dit voor de toekomst van de
-              muziekcultuur? In plaats van te debatteren of AI-muziek "goed"
-              of "slecht" is, onderzoekt het de beleefde ervaring van de
-              ontmoeting ermee.
+              Dit project vraagt: wat verandert er precies, en voor wie? Het
+              gaat niet om de vraag of AI-muziek goed of slecht is, maar om
+              hoe mensen die muziek beleven.
             </p>
           </motion.div>
 

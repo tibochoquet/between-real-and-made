@@ -110,16 +110,15 @@ export function About() {
             {/* Bio */}
             <motion.div className="space-y-4" variants={fadeInUp}>
               <p className="font-inter text-cream/60 text-base leading-relaxed">
-                Ik ben een ontwerpend onderzoeker, geïnteresseerd in hoe
-                opkomende technologieën veranderen hoe mensen cultuur maken,
-                ervaren en bespreken. Between Real and Made is mijn
-                afstudeerproject voor de opleiding CMD aan Avans Hogeschool.
+                Ik ben een ontwerpend onderzoeker, geïnteresseerd in hoe nieuwe
+                technologieën veranderen hoe mensen cultuur maken, ervaren en
+                bespreken. Between Real and Made is mijn afstudeerproject voor
+                de opleiding CMD aan Avans Hogeschool.
               </p>
               <p className="font-inter text-cream/60 text-base leading-relaxed">
-                Mijn werk bevindt zich op het snijvlak van speculatief ontwerp,
-                interactieonderzoek en cultuurkritiek. Ik geloof dat ontwerp de
-                verantwoordelijkheid heeft om moeilijke vragen te stellen, niet
-                alleen om ze te beantwoorden.
+                Mijn werk combineert speculatief ontwerp, interactieonderzoek
+                en cultuurkritiek. Ik geloof dat ontwerp moeilijke vragen mag
+                stellen, niet alleen beantwoorden.
               </p>
             </motion.div>
 

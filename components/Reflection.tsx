@@ -16,7 +16,7 @@ const insights = [
   {
     num: "01",
     heading: "Authenticiteit is relationeel",
-    body: "Authenticiteit in muziek is geen eigenschap van het geluid zelf — het is een eigenschap van de relatie tussen luisteraar, maker en context.",
+    body: "Authenticiteit in muziek zit niet in het geluid zelf, maar in de relatie tussen luisteraar, maker en context.",
   },
   {
     num: "02",
@@ -26,7 +26,7 @@ const insights = [
   {
     num: "03",
     heading: "Profielen zijn posities",
-    body: "De vijf profielen zijn geen vaste persoonlijkheidstypen, maar posities op een spectrum die dezelfde persoon anders kan innemen.",
+    body: "De vijf profielen zijn geen vaste persoonlijkheidstypen, maar posities op een spectrum. Dezelfde persoon kan op een ander moment een andere positie innemen.",
   },
 ];
 
@@ -34,17 +34,17 @@ const secondary = [
   {
     category: "Ontwerpkeuzes",
     items: [
-      { heading: "Geen voorafgaande onthulling", body: "Deelnemers kregen pas na afloop te horen dat de film door AI was gegenereerd — een ethische keuze die zorgvuldige debriefing vereiste." },
+      { heading: "Geen voorafgaande onthulling", body: "Deelnemers kregen pas na afloop te horen dat de film door AI was gegenereerd. Dat vroeg om zorgvuldige debriefing." },
       { heading: "Film vóór tool", body: "De volgorde was bewust: emotionele betrokkenheid eerst, rationeel oordeel daarna." },
-      { heading: "Profielen, geen oordelen", body: "Elk profiel wordt met gelijke geldigheid gepresenteerd, om sturing richting een 'juist' antwoord te vermijden." },
+      { heading: "Profielen, geen oordelen", body: "Elk profiel wordt op gelijke voet gepresenteerd, zodat er geen 'juist' antwoord bestaat." },
     ],
   },
   {
     category: "Toekomstig werk",
     items: [
-      { heading: "Longitudinale opvolging", body: "Een vervolgsessie 4 weken later zou tonen of profielposities stabiel blijven of verschuiven." },
-      { heading: "Bredere demografie", body: "De huidige steekproef bestaat vooral uit 18–30-jarigen met interesse in design en muziek." },
-      { heading: "Zelfidentificatie met profiel", body: "Toekomstige iteraties zouden deelnemers kunnen laten aangeven met welk profiel ze zich identificeren." },
+      { heading: "Longitudinale opvolging", body: "Een vervolgsessie 4 weken later zou laten zien of iemands positie stabiel blijft of verandert." },
+      { heading: "Bredere demografie", body: "De deelnemersgroep bestaat nu vooral uit 18–30-jarigen met interesse in design en muziek." },
+      { heading: "Zelfidentificatie met profiel", body: "In een volgende versie zouden deelnemers kunnen aangeven met welk profiel ze zich herkennen." },
     ],
   },
 ];
@@ -105,8 +105,8 @@ export function Reflection() {
             whileInView="visible"
             viewport={viewportConfig}
           >
-            Reflectie is geen epiloog — het is een wezenlijk onderdeel van
-            het onderzoek. Dit zijn geen conclusies, maar aanzetten voor het
+            Reflectie is geen sluitstuk, maar een onderdeel van het
+            onderzoek zelf. Dit zijn geen conclusies, maar aanzetten voor het
             volgende gesprek.
           </motion.p>
         </div>
