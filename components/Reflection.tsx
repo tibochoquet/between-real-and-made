@@ -57,7 +57,6 @@ export function Reflection() {
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image src="/tool/licht4.png" alt="" fill className="object-cover" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(243,228,205,0.72) 0%, rgba(231,213,187,0.72) 45%, rgba(218,197,168,0.70) 100%)" }} />
       </div>
       <SectionGlow
         layers={[

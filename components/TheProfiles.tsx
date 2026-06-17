@@ -141,6 +141,22 @@ function ProfileCard({
   onOpen: (profile: Profile, trigger: HTMLElement) => void;
 }) {
   const [isActive, setIsActive] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const activate = () => setIsActive(true);
+    const deactivate = () => setIsActive(false);
+    el.addEventListener("touchstart", activate, { passive: true });
+    el.addEventListener("touchend", deactivate, { passive: true });
+    el.addEventListener("touchcancel", deactivate, { passive: true });
+    return () => {
+      el.removeEventListener("touchstart", activate);
+      el.removeEventListener("touchend", deactivate);
+      el.removeEventListener("touchcancel", deactivate);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -150,13 +166,11 @@ function ProfileCard({
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div
+        ref={cardRef}
         className="relative w-full aspect-[18/10]"
         style={{ perspective: "1800px" }}
-        onPointerEnter={(e) => { if (e.pointerType === "mouse") setIsActive(true); }}
-        onPointerLeave={(e) => { if (e.pointerType === "mouse") setIsActive(false); }}
-        onPointerDown={(e) => { if (e.pointerType !== "mouse") setIsActive(true); }}
-        onPointerUp={(e) => { if (e.pointerType !== "mouse") setIsActive(false); }}
-        onPointerCancel={() => setIsActive(false)}
+        onMouseEnter={() => setIsActive(true)}
+        onMouseLeave={() => setIsActive(false)}
       >
         <motion.button
           type="button"
