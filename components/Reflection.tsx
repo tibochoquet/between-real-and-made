@@ -95,7 +95,7 @@ export function Reflection() {
               whileInView="visible"
               viewport={viewportConfig}
             >
-              Wat dit project<br />me heeft geleerd.
+              Wat dit project<br />mij heeft geleerd.
             </motion.h2>
           </div>
           <motion.p

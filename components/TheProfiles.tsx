@@ -33,7 +33,7 @@ const profiles: Profile[] = [
     title: "De Scepticus",
     tagline: "Het gevoel verdween op het moment dat ik de waarheid kende.",
     quote:
-      "Het voelde echt voor me, totdat je het me vertelde. Dat is wat me schrok: ik vond het niet prettig dat mijn gevoelens gefabriceerd konden worden.",
+      "Het voelde echt voor mij, totdat je het mij vertelde. Dat is wat mij schrok: ik vond het niet prettig dat mijn gevoelens gefabriceerd konden worden.",
     description:
       "De Scepticus is het meest verontrust door de mogelijkheid van emotionele manipulatie. Ze zijn niet principieel tegen AI, maar maken zich grote zorgen over het idee dat hun eigen emotionele reacties ontworpen kunnen worden zonder toestemming of bewustzijn. Transparantie staat bij hen hoog in het vaandel.",
     traits: [
@@ -53,7 +53,7 @@ const profiles: Profile[] = [
     title: "De Twijfelaar",
     tagline: "Ik waardeer het, maar er ontbreekt iets.",
     quote:
-      "Het was prachtig. Maar toen je vertelde dat het AI was, voelde ik me bedrogen. Ik weet niet precies waarom.",
+      "Het was prachtig. Maar toen je vertelde dat het AI was, voelde ik mij bedrogen. Ik weet niet precies waarom.",
     description:
       "De Twijfelaar zit gevangen tussen emotionele betrokkenheid en intellectueel ongemak. Ze reageren oprecht op door AI gegenereerde muziek, maar worstelen met de wetenschap van de herkomst ervan. Menselijke intentie en inzet zijn voor hen essentiële onderdelen van muzikale betekenis.",
     traits: [
@@ -91,9 +91,9 @@ const profiles: Profile[] = [
   {
     id: "optimist",
     title: "De Optimist",
-    tagline: "Muziek is muziek. Als het me raakt, raakt het me.",
+    tagline: "Muziek is muziek. Als het mij raakt, raakt het mij.",
     quote:
-      "Het maakt me niet uit of een machine het gemaakt heeft. Het gevoel was echt, dat is het enige wat voor mij telt.",
+      "Het maakt mij niet uit of een machine het gemaakt heeft. Het gevoel was echt, dat is het enige wat voor mij telt.",
     description:
       "De Optimist omarmt door AI gegenereerde muziek zonder voorbehoud. Voor hen is de emotionele reactie de doorslaggevende maatstaf voor waarde. Ze vieren de democratisering van muziekcreatie en zien AI als een uitbreiding van mogelijke menselijke ervaringen, niet als een verarming ervan.",
     traits: [

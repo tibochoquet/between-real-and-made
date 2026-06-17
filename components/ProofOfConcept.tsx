@@ -66,15 +66,15 @@ const findings = [
 
 const quotes = [
   {
-    text: "Het voelde echt voor me, totdat je het me vertelde. Dat is wat me schrok: ik vond het niet prettig dat mijn gevoelens gefabriceerd konden worden.",
+    text: "Het voelde echt voor mij, totdat je het mij vertelde. Dat is wat mij schrok: ik vond het niet prettig dat mijn gevoelens gefabriceerd konden worden.",
     profile: "De Scepticus",
   },
   {
-    text: "Muziek is muziek. Als het me raakt, raakt het me. De machine is gewoon het nieuwste instrument.",
+    text: "Muziek is muziek. Als het mij raakt, raakt het mij. De machine is gewoon het nieuwste instrument.",
     profile: "De Optimist",
   },
   {
-    text: "Ik waardeer het vakmanschap, maar dit doet me afvragen wat we verliezen wanneer intentie verdwijnt.",
+    text: "Ik waardeer het vakmanschap, maar dit doet mij afvragen wat we verliezen wanneer intentie verdwijnt.",
     profile: "De Twijfelaar",
   },
 ];
