@@ -108,11 +108,11 @@ const profileResults: ProfileResult[] = [
     chip: "De Twijfelaar",
     color: "#7A8C6E",
     title: "Ik weet het nog niet",
-    desc: "Je antwoorden gaan alle kanten op, en dat is precies het punt. Je laat je niet makkelijk vangen in een standpunt, omdat de werkelijkheid je telkens op andere gedachten brengt. Je zoekt de nuance, maar weet soms ook niet waar je staat.",
+    desc: "Je antwoorden gaan alle kanten op. Je ziet sterke argumenten aan beide kanten en wilt je niet vastpinnen op één standpunt. De vraag is: is dat nuance of uitstelgedrag?",
     questions: [
-      "Welke scène bracht je het meest van je stuk? Waarom precies die?",
-      "Is twijfel hier een sterkte, of ontloop je daarmee een keuze?",
-      "Als je morgen moest kiezen, AI-muziek ja of nee, wat kies je en waarom?",
+      "Welke scene uit de film vond je het meest impactvol? Waarom die?",
+      "Komt je twijfel voort uit nuance, of omdat je nog informatie mist?",
+      "Als je morgen moest kiezen: AI-muziek ja of nee, wat kies je en waarom?",
     ],
   },
   {
@@ -132,11 +132,11 @@ const profileResults: ProfileResult[] = [
     chip: "De Optimist",
     color: "#C4714A",
     title: "AI is gewoon de volgende stap",
-    desc: "Voor jou is AI geen bedreiging maar een evolutie. Muziek is altijd veranderd door technologie en dit is de volgende stap. De luisterervaring staat centraal, niet wie of wat het maakt. Je romantiseert de jazzbar niet.",
+    desc: "Voor jou is AI geen bedreiging maar een evolutie. Muziek is altijd veranderd door technologie en dit is de volgende stap. De luisterervaring staat centraal, niet wie of wat het maakt.",
     questions: [
       "Geloof je echt dat de beleving van de luisteraar het enige is dat telt, of is dat ook een aangeleerd standpunt?",
       "Wat verlies je als menselijke muzikanten verdwijnen? Of verlies je eigenlijk niets?",
-      "Hoe reageer je op iemand die zegt: maar dan zit er geen verhaal meer achter de muziek?",
+      "Is muziek zonder menselijk verhaal erachter nog steeds betekenisvol? Waarom?",
     ],
   },
   {
@@ -144,11 +144,11 @@ const profileResults: ProfileResult[] = [
     chip: "De Cynicus",
     color: "#4A4A6B",
     title: "Dit was al zo",
-    desc: "Jij ziet de hypocrisie. De dj draaide al op autopiloot. De producer kon zijn muziek al niet live spelen. AI maakt alleen zichtbaar wat er al was. Je bent niet enthousiast over de toekomst, maar je rouwt ook niet om het verleden.",
+    desc: "Jij ziet de hypocrisie. De dj draaide al op autopiloot. De producer kon zijn muziek al niet live spelen. AI maakt alleen zichtbaar wat er al was. Je rouwt niet om het verleden.",
     questions: [
-      "Als dit al zo was vóór AI, maakt het dan iets uit dat AI het nu explicieter maakt?",
-      "Was er iets in de film dat jou verraste, of bevestigde het alleen wat je al dacht?",
-      "Heb je ooit iets beleefd als echt, terwijl het dat achteraf niet was? Wat deed dat met jou?",
+      "Als dit al zo was voor AI, maakt het dan iets uit dat AI het nu explicieter maakt?",
+      "Als AI echt niks verandert, waarom hebben we het er dan over?",
+      "Als authenticiteit er niet toe doet, waarom reageren mensen dan zo sterk als ze erachter komen dat iets nep was?",
     ],
   },
 ];
